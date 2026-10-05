@@ -1,0 +1,19 @@
+{
+  "name": "fitx",
+  "version": "1.0.0",
+  "description": "FitX - Personal Fitness & AI Trainer Web App",
+  "main": "index.html",
+  "scripts": {
+    "start": "powershell -ExecutionPolicy Bypass -File ./server.ps1",
+    "dev": "powershell -ExecutionPolicy Bypass -File ./server.ps1"
+  },
+  "keywords": [
+    "fitness",
+    "ai-trainer",
+    "workout-tracker",
+    "nutrition",
+    "health"
+  ],
+  "author": "FitX",
+  "license": "MIT"
+}

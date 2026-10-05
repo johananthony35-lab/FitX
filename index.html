@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitX — Personal Fitness & AI Trainer</title>
+  <meta name="description" content="FitX is a premium personal fitness platform for tracking workouts, daily activity, nutrition, macros, progress, and receiving personalized guidance from an AI trainer.">
+  
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- SIDEBAR NAVIGATION (DESKTOP) -->
+    <aside class="sidebar">
+      <div class="brand-logo" onclick="window.FitXApp.navigate('dashboard')" style="cursor: pointer;">
+        <div class="brand-icon">FX</div>
+        <div class="brand-text">FitX</div>
+        <span class="brand-tag">PRO</span>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="#" class="nav-item active" data-view-target="dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+          Dashboard
+        </a>
+
+        <a href="#" class="nav-item" data-view-target="workout">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6.5 6.5h11M6.5 17.5h11M3 10v4M21 10v4M6.5 6.5v11M17.5 6.5v11"/></svg>
+          Workout
+        </a>
+
+        <a href="#" class="nav-item" data-view-target="exercises">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          Exercises
+        </a>
+
+        <a href="#" class="nav-item" data-view-target="nutrition">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2a10 10 0 0 0-10 10c0 5.523 4.477 10 10 10s10-4.477 10-10A10 10 0 0 0 12 2zm0 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/></svg>
+          Nutrition
+        </a>
+
+        <a href="#" class="nav-item" data-view-target="activity">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Activity
+        </a>
+
+        <a href="#" class="nav-item" data-view-target="progress">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          Progress
+        </a>
+
+        <a href="#" class="nav-item" data-view-target="ai-trainer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          AI Trainer
+        </a>
+
+        <a href="#" class="nav-item" data-view-target="goals">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          Goals
+        </a>
+
+        <a href="#" class="nav-item" data-view-target="profile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Profile
+        </a>
+
+        <a href="#" class="nav-item" data-view-target="settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-ai-badge" onclick="window.FitXApp.navigate('ai-trainer')">
+        <div class="ai-avatar">✦</div>
+        <div>
+          <div style="font-weight: 700; font-size: 13px; color: #f8fafc;">FitX AI Coach</div>
+          <div style="font-size: 11px; color: #c084fc;">Tap to chat with AI</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- BOTTOM NAVIGATION (MOBILE) -->
+    <nav class="bottom-nav">
+      <a href="#" class="bottom-nav-item active" data-view-target="dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+        Home
+      </a>
+      <a href="#" class="bottom-nav-item" data-view-target="workout">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6.5 6.5h11M6.5 17.5h11M3 10v4M21 10v4M6.5 6.5v11M17.5 6.5v11"/></svg>
+        Workout
+      </a>
+      <a href="#" class="bottom-nav-item" data-view-target="nutrition">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2a10 10 0 0 0-10 10c0 5.523 4.477 10 10 10s10-4.477 10-10A10 10 0 0 0 12 2zm0 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/></svg>
+        Nutrition
+      </a>
+      <a href="#" class="bottom-nav-item" data-view-target="ai-trainer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        AI Coach
+      </a>
+      <a href="#" class="bottom-nav-item" data-view-target="profile">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Profile
+      </a>
+    </nav>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="main-content">
+      <!-- TOP HEADER -->
+      <header class="top-header">
+        <div class="header-title-group">
+          <!-- Page title dynamically set by JS or header -->
+        </div>
+
+        <div class="header-actions">
+          <button class="icon-btn" onclick="window.FitXApp.showToast('🔔 Reminder: Time to hydrate! Log +250ml water.')" title="Notifications">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span class="notification-dot"></span>
+          </button>
+
+          <div class="user-pill" onclick="window.FitXApp.navigate('profile')">
+            <div class="user-avatar-small">J</div>
+            <span class="user-name-small">Johan</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- 10 MAIN PAGE VIEWS -->
+      <div id="view-dashboard" class="page-view active"></div>
+      <div id="view-workout" class="page-view"></div>
+      <div id="view-exercises" class="page-view"></div>
+      <div id="view-nutrition" class="page-view"></div>
+      <div id="view-activity" class="page-view"></div>
+      <div id="view-progress" class="page-view"></div>
+      <div id="view-ai-trainer" class="page-view"></div>
+      <div id="view-goals" class="page-view"></div>
+      <div id="view-profile" class="page-view"></div>
+      <div id="view-settings" class="page-view"></div>
+    </main>
+  </div>
+
+  <!-- SCRIPT IMPORTS -->
+  <script src="js/exercises-data.js"></script>
+  <script src="js/food-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/onboarding.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/workout.js"></script>
+  <script src="js/exercises.js"></script>
+  <script src="js/nutrition.js"></script>
+  <script src="js/activity.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/ai-trainer.js"></script>
+  <script src="js/goals.js"></script>
+  <script src="js/streak-recovery.js"></script>
+  <script src="js/profile-settings.js"></script>
+  <script src="js/notifications.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
